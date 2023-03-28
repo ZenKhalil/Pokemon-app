@@ -1,0 +1,206 @@
+html{
+    position: absolute;
+    cursor: url(images/closed.png) 1 5,auto;
+}
+
+body {
+  margin: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 1.5em;
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url("https://assets.pokemon.com//assets/cms2/img/misc/virtual-backgrounds/masters/forest.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: black;
+  cursor: url(images/closed.png) 1 5,auto;
+}
+
+header {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-size: 4em;
+  text-align: center;
+  color: #dcc034;
+  font-family: 'Pokemon Solid', sans-serif;
+  letter-spacing: 0em;
+  text-shadow: 1px 1px #002383;
+  -webkit-text-stroke: 5px #1d56e8;
+  stroke: 1px #0b2cd0;
+  position: relative;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  transform: skewX(-12deg);
+  cursor: url(images/closed.png) 1 5,auto;
+}
+
+h1 {
+  text-align: center;
+  font-size: 1em;
+  margin: 0;
+  font-family: 'Pokemon Solid', sans-serif;
+  text-shadow: 1px 1px #363c48;
+  -webkit-text-stroke: 0.2px #ffffff;
+  stroke: 0.1px #000000;
+  position: relative;
+  transform: skewX(-10deg);
+}
+
+
+h2 {
+  margin-top: 5px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 1em;
+  font-family: 'Pokemon Solid', sans-serif;
+  text-shadow: #f3f6ff;
+}
+
+h3 {
+  text-align: center;
+  font-size: 2.5em;
+  margin: 0;
+  font-family: 'Pokemon Solid', sans-serif;
+  text-shadow: 1px 1px #363c48;
+  -webkit-text-stroke: 0.2px #ffffff;
+  stroke: 0.1px #000000;
+  position: relative;
+  transform: skewX(-10deg);
+}
+
+p {
+    font-size: 0.8em;
+    margin: 0;
+    font-family: 'Pokemon Solid', sans-serif;
+    text-shadow: 1px 1px #fbfbfb;
+    -webkit-text-stroke: 0.2px #ffffff;
+    stroke: 0.1px #000000;
+}
+
+#open_button {
+  text-align: center;
+}
+#close_button {
+  text-align: center;
+}
+
+button {
+  display: inline-block;
+  font-family: 'Pokemon Solid', sans-serif;
+  text-shadow: #f3f6ff;
+  letter-spacing: 1px;
+  padding: 15px 15px;
+  font-size: 20px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #1d56e8;
+  background-color:#cda11f;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px grey;                                            
+}
+
+::backdrop {
+    cursor: url(images/closed.png) 1 5,auto;
+    backdrop-filter: blur(5px);
+    
+}
+
+button:hover {
+  background-color:#D5A100;
+  cursor: url(images/hover.png) 1 5,auto;
+}
+
+button:active {
+  color:#cda11f;
+  box-shadow: 0 5px rgba(214, 178, 178, 0.441);
+  transform: translateY(4px);
+  background-color:#1d56e8;
+  cursor: url(images/open.png) 1 5,auto;
+}
+
+dialog {
+  line-height: 1.3em;
+  color: #000610;
+  background-color: #85ab86;
+  top: 93%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 600px;
+  max-height: 700px;
+  padding: 2em;
+  border-radius: 55px;
+  cursor: url(images/closed.png) 1 5,auto;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1em;
+}
+
+@media (min-width: 400px) {
+  .grid-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 900px) {
+  .grid-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media (min-width: 1400px) {
+  .grid-container {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+@media (min-width: 1900px) {
+  .grid-container {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+}
+
+.grid-container > article {
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.25);
+  padding: 1em;
+  background-color: #6da6c7;
+  border-style: solid;
+  border-radius: 15px;
+  border-color: #0075BE;
+  
+}
+
+.grid-container > article:hover {
+  box-shadow: 0 8px 16px 0;
+  
+}
+
+.grid-container img {
+  width: 80%;
+  height: auto;
+  object-fit: cover;
+}
+
+footer {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-size: 1em;
+    text-align: center;
+    color: #dcc034;
+    font-family: 'Pokemon Solid', sans-serif;
+    letter-spacing: 0em;
+    text-shadow: 1px 1px #002383;
+    -webkit-text-stroke: 1px #1d56e8;
+    stroke: 0.8px #0b2cd0;
+    position: relative;
+    z-index: -1;
+    bottom: -10px;
+    transform: skewX(-12deg);
+    
+}
