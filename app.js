@@ -1,13 +1,33 @@
 "use strict";
 
+// compareDexindex defines how to sort dexindex
+function compareDexindex(pokemonA, pokemonB) {
+  return pokemonA.dexindex - pokemonB.dexindex;
+}
+
+// compareTypes defines hot to sort on types
+function compareNames(pokemonA, pokemonB){
+  return pokemonA.name.localeCompare(pokemonB.name);
+}
+
 // when the window loads, call initApp function
 window.addEventListener("load", initApp);
 
 // initialize the application
 async function initApp() {
   console.log("initApp: app.js is working!!");
+
   // get the list of pokemons from the API
   const pokemons = await getPokemons();
+
+  // sort elements in the array dexindex
+  pokemons.sort(compareDexindex);
+  console.log(pokemons);
+
+  // Different compare functions
+  pokemons.sort(compareNames);
+  console.log(pokemons);
+
   // display the list of pokemons
   showPokemons(pokemons);
 }
@@ -16,8 +36,9 @@ async function initApp() {
 async function getPokemons() {
   // fetch the data from the API
   const response = await fetch(
-    "https://zenkhalil.github.io/jsonapi/data.json"
+    "https://cederdorff.github.io/dat-js/05-data/pokemons.json"
   );
+
   // convert the response to JSON
   const data = await response.json();
   console.log(data);
@@ -61,6 +82,8 @@ function showPokemon(pokemon, index) {
           <p id="generation">Generation: ${pokemon.generation}</p>
           <p id="firstVersion">First gameversion: ${pokemon.spilversion}</p> 
           <form method="dialog">
+           
+
             <button id="close-button-${index}">Close</button>
           </form>
         </dialog>
