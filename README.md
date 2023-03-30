@@ -6,7 +6,7 @@ It contains a list of pokemon objects that can be viewed with more details in a 
 
 The list is also sorted by name in alphabetical order for an easier UI experience.
 
-Feel free to use it as a Pokedex.
+Feel free to use it as a Pokedex at https://zenkhalil.github.io/Pokemon-app/
 
 B.R.
 Mohammed-Zen Ismail Alkhzrachi
