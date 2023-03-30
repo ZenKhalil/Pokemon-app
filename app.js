@@ -1,31 +1,43 @@
 "use strict";
 
+// when the window loads, call initApp function
 window.addEventListener("load", initApp);
 
+// initialize the application
 async function initApp() {
   console.log("initApp: app.js is working!!");
+  // get the list of pokemons from the API
   const pokemons = await getPokemons();
+  // display the list of pokemons
   showPokemons(pokemons);
 }
 
+// get the list of pokemons from the API
 async function getPokemons() {
+  // fetch the data from the API
   const response = await fetch(
     "https://zenkhalil.github.io/jsonapi/data.json"
   );
+  // convert the response to JSON
   const data = await response.json();
   console.log(data);
+  // return the list of pokemons
   return data;
 }
 
+// display the list of pokemons
 function showPokemons(characterList) {
   let counter = 1;
+  // loop through each pokemon in the list and display it
   for (const pokemon of characterList) {
     showPokemon(pokemon, counter);
     counter++;
   }
 }
 
+// display a single pokemon and its details
 function showPokemon(pokemon, index) {
+  // add the pokemon details to the HTML
   document.querySelector("#pokemons").insertAdjacentHTML(
     "beforeend",
     /*html*/ `
@@ -56,17 +68,21 @@ function showPokemon(pokemon, index) {
     `
   );
 
-  document
-    .querySelector(`#pokemons article:last-child`)
-    .addEventListener("click", () => {
-      const dialogBox = document.querySelector(`#dialog-box-${index}`);
+  // add an event listener for when the user clicks on a pokemon
+  document.querySelector(`#pokemons article:last-child`).addEventListener("click", () => {
+    // get the dialog box and close button for this pokemon
+    const dialogBox = document.querySelector(`#dialog-box-${index}`);
       const closeButton = document.querySelector(`#close-button-${index}`);
 
+       // set the pokemon details in the dialog box
       document.querySelector("#name").textContent = `${pokemon.name}`;
       document.querySelector("#image").set = `${pokemon.image}`;
+      
+      // show the dialog box and scroll to the top
       dialogBox.showModal();
       dialogBox.scrollTop = 0; // scroll to the top
 
+      // add an event listener for when the user clicks the close button
       closeButton.addEventListener("click", () => {
         dialogBox.close();
       });
